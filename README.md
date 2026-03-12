@@ -38,8 +38,8 @@ Get the system running in 1-2 minutes:
 
 **For detailed instructions, see:**
 - [Server Setup Guide](https://github.com/TPsChat/NodejsServer/tree/main/Server/README.md)
-- [WebAdmin Setup Guide](https://github.com/TPsChat/WebAdmin/README.md)
-- [Client Setup Guide](https://github.com/TPsChat/AndroidApp/README.md)
+- [WebAdmin Setup Guide](https://github.com/TPsChat/WebAdmin/tree/main/README.md)
+- [Client Setup Guide](https://github.com/TPsChat/AndroidApp/tree/main/README.md)
 
 ---
 
