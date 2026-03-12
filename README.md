@@ -37,9 +37,9 @@ Get the system running in 1-2 minutes:
    - Run app → Login/Register
 
 **For detailed instructions, see:**
-- [Server Setup Guide](ServerNodeJS/Server/README.md)
-- [WebAdmin Setup Guide](WebAdmin/README.md)
-- [Client Setup Guide](Client/README.md)
+- [Server Setup Guide](https://github.com/TPsChat/NodejsServer/tree/main/Server/README.md)
+- [WebAdmin Setup Guide](https://github.com/TPsChat/WebAdmin/README.md)
+- [Client Setup Guide](https://github.com/TPsChat/AndroidApp/README.md)
 
 ---
 
