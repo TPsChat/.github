@@ -24,6 +24,8 @@
                                             │   MongoDB    │
                                             │  Database    │
                                             └──────────────┘
+```
+
 ---
 
 ## Overview
