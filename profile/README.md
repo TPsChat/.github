@@ -1,8 +1,36 @@
 # Chat Application
 
-A full-stack chat system including:
+## System Architecture
 
-* Node.js Server (Express + Socket.IO + MongoDB)
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                         Chat Application                        │
+└─────────────────────────────────────────────────────────────────┘
+
+┌──────────────┐      REST API (/api/*)     ┌──────────────┐
+│   Android    │ ─────────────────────────▶ │              │
+│   Client     │                            │              │
+│              │ ◀───────────────────────── │              │
+└──────────────┘      WebSocket/Socket.IO   │   Node.js    │
+                                            │   Server     │
+                                            │  (Express)   │ 
+┌──────────────┐      REST API (/api/*)     │              │    
+│   WebAdmin   │ ─────────────────────────▶ │              │ 
+│   (React)    │ ◀───────────────────────── │              │ 
+└──────────────┘      (Polling every 30s)   └──────┬───────┘
+                                                   │
+                                                   ▼
+                                            ┌──────────────┐
+                                            │   MongoDB    │
+                                            │  Database    │
+                                            └──────────────┘
+---
+
+## Overview
+
+Full-stack chat system including:
+
+* Node.js Server
 * React Web Admin
 * Android Client
 
@@ -10,15 +38,15 @@ A full-stack chat system including:
 
 ## Quick Start
 
-### 1. Requirements
+### Requirements
 
 * Node.js (v16+)
-* MongoDB (local or Atlas)
+* MongoDB
 * Android Studio
 
 ---
 
-### 2. Start Server
+### Run Server
 
 ```bash
 cd ServerNodeJS/Server
@@ -29,7 +57,7 @@ npm run dev
 
 ---
 
-### 3. Start Web Admin
+### Run WebAdmin
 
 ```bash
 cd WebAdmin
@@ -40,26 +68,17 @@ npm run dev
 
 ---
 
-### 4. Run Android Client
+### Run Android Client
 
 * Open `Client` in Android Studio
-* Set `SERVER_IP` in `ServerConfig.java`
+* Set `SERVER_IP`
 * Run app
-
----
-
-## Architecture
-
-* REST API: `/api/*`
-* Realtime: Socket.IO
-* Database: MongoDB
-* Optional: WebRTC (video call), TURN, SMTP
 
 ---
 
 ## Configuration
 
-Update server IP in:
+Set server IP in:
 
 * `ServerNodeJS/Server/.env`
 * `WebAdmin/.env`
@@ -78,9 +97,9 @@ Update server IP in:
 ## Common Issues
 
 * MongoDB not running
-* Wrong IP or port
+* Wrong IP / port
 * Firewall blocking
-* Android emulator: use `10.0.2.2`
+* Emulator uses `10.0.2.2`
 
 ---
 
@@ -95,16 +114,16 @@ Update server IP in:
 ## Project Structure
 
 ```
-ServerNodeJS/Server   # Backend
-WebAdmin              # Admin panel
-Client                # Android app
+ServerNodeJS/Server
+WebAdmin
+Client
 ```
 
 ---
 
 ## Notes
 
-* All components must use the same server IP
-* Optional services can be added later (TURN, email, AI)
+* All components must use same server IP
+* Optional services can be added later
 
 ---
